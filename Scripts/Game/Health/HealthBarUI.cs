@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class HealthBarUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private UnityEngine.UI.Image _healthBarForegroundImage;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealthBar(HealthController healthController)
     {
-        
+        _healthBarForegroundImage.fillAmount = healthController.RemainingHealthPercentage;
     }
 }
