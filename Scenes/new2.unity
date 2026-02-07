@@ -654,7 +654,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -670,8 +670,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc1408583ea912419a2ab9fcc4a3dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  rotationSpeed: 720
+  _speed: 5
+  _rotationSpeed: 720
+  _screenBorder: 30
 --- !u!58 &1364044674
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -700,6 +701,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e3838731b632447bad898af61155c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  _bulletSpeed: 0
+  _gunOffset: {fileID: 0}
+  _timeBetweenShots: 0
 --- !u!1001 &1268889111502885662
 PrefabInstance:
   m_ObjectHideFlags: 0
