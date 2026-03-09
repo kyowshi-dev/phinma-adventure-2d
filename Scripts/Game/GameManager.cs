@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        _sceneController.LoadScene("Main Menu");
+        _sceneController.LoadScene("Game Over");
     }
 }

@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 92641214519081193}
   - component: {fileID: 6605972486936555543}
   - component: {fileID: -2698601194041664186}
-  - component: {fileID: 1408760550887989421}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -80,13 +79,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _rotationSpeed: 100
+  _rotationSpeed: 150
   _screenBorder: -30
   _obstacleCheckCircleRadius: 0.45
   _obstacleCheckDistance: 1
   _obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
 --- !u!114 &934548391925412509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984530f63f040444c8e44689ed5a84b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 5
+  _playerAwarenessDistance: 10
 --- !u!58 &2508621341339852373
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1d7871169a7c04b9ec7352eae47b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 10
+  _damageAmount: 30
 --- !u!95 &7370240984835083133
 Animator:
   serializedVersion: 4
@@ -373,26 +372,6 @@ MonoBehaviour:
   _flashDuration: 0.2
   _flashColor: {r: 1, g: 0, b: 0, a: 1}
   _numberOfFlashes: 1
---- !u!114 &1408760550887989421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6230967561207350648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd36acc41295b0b439611699171b5849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _viewRadius: 10
-  _viewAngle: 120
-  _targetMask:
-    serializedVersion: 2
-    m_Bits: 8
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &6814504587716880412
 GameObject:
   m_ObjectHideFlags: 0

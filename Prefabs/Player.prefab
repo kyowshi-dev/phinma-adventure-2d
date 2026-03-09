@@ -225,7 +225,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1631761876495007230, guid: b071af15b4d1cca47bb4cf81178d8541, type: 3}
   _bulletSpeed: 8
   _gunOffset: {fileID: 7325333450894852499}
-  _timeBetweenShots: 0.5
+  _timeBetweenShots: 1
   _gunshotAudio: {fileID: 7325333450489056191}
 --- !u!114 &7325333450489056179
 MonoBehaviour:
@@ -335,6 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invincibilityDuration: 0.5
+  _flashColor: {r: 0, g: 0, b: 0, a: 0}
+  _numberOfFlashes: 10
 --- !u!114 &7325333450489056177
 MonoBehaviour:
   m_ObjectHideFlags: 0
