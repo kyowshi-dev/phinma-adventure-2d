@@ -74,12 +74,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateInDirectionOfInput()
     {
-        if (_movementInput != Vector2.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, _smoothedMovementInput);
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime); 
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Vector3 mouseWorldPosition = _camera.ScreenToWorldPoint(mouseScreenPosition);
+        Vector2 direction = (Vector2)(mouseWorldPosition - transform.position);
 
-            _rigidbody.MoveRotation(rotation);
+        if (direction != Vector2.zero)
+        {
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+            float newAngle = Mathf.MoveTowardsAngle(_rigidbody.rotation, targetAngle, _rotationSpeed * Time.deltaTime);
+
+            _rigidbody.MoveRotation(newAngle);
         }
     }
 
