@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2698601194041664186, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
+      propertyPath: _flashDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 92641214519081193, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
       propertyPath: _chanceOfCollectableDrop
       value: 0.5

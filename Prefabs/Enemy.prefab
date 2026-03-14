@@ -78,14 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e3c2e66169efd4ba5a6f9358369983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
-  _rotationSpeed: 150
-  _screenBorder: -30
-  _obstacleCheckCircleRadius: 0.45
-  _obstacleCheckDistance: 1
-  _obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  _enemyAttributes: {fileID: 11400000, guid: defc96a3b50ff08468b9340cae4ad9d9, type: 2}
 --- !u!114 &934548391925412509
 MonoBehaviour:
   m_ObjectHideFlags: 0

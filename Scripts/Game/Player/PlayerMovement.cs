@@ -30,6 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+    if (DialogueManager.DialogueActive)
+        {
+            _rigidbody.velocity = Vector2.zero; // Stop sliding
+            _animator.SetBool("IsMoving", false); // Stop walking animation
+            return; // Skip the rest of the movement code
+        }
+
         SetPlayerVelocity();
         RotateInDirectionOfInput();
         SetAnimation();

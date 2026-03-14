@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5471907789411856923, guid: 0210c5fabb694b14cad7894d310c44a7, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5471907789411856923, guid: 0210c5fabb694b14cad7894d310c44a7, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5885841334408855111, guid: 0210c5fabb694b14cad7894d310c44a7, type: 3}
       propertyPath: m_Name

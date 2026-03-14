@@ -26,6 +26,8 @@ public class PlayerShoot : MonoBehaviour
  
     void Update()
     {
+        if (DialogueManager.DialogueActive) return;
+        
         if (_fireContinuously || _fireSingle)
         {
             float timeSinceLastFire = Time.time - _lastFireTime;

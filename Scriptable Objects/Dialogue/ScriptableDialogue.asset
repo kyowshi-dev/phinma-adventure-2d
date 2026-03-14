@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9583038d3d3cad9478d52ade71bb4b5b, type: 3}
+  m_Name: ScriptableDialogue
+  m_EditorClassIdentifier: 
+  dialogueID: 2-1 Goal
+  speakerName: Charlz
+  portrait: {fileID: 260941157, guid: fe99eba30331ddf47b371ef5986ccae7, type: 3}
+  voiceClip: {fileID: 8300000, guid: 9df8cdab24f591b4bb56eb52f1ffd226, type: 3}
+  dialogueLines:
+  - LOL
+  - HAHAHAHAH

@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 6230967561207350648, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
-  _minimumSpawnTime: 3
-  _maximumSpawnTime: 5
+  _minimumSpawnTime: 15
+  _maximumSpawnTime: 20
