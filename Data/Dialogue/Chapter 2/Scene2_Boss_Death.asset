@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9583038d3d3cad9478d52ade71bb4b5b, type: 3}
-  m_Name: Tutorial_Zombie_Alert 1
+  m_Name: Scene2_Boss_Death
   m_EditorClassIdentifier: 
-  dialogueID: 1-1
+  dialogueID: 2-4
   speakerName: Charlz
   portrait: {fileID: 0}
   voiceClip: {fileID: 0}
   dialogueLines:
-  - Zombie!
-  - When you kill a zombie it may occassionall drop a health pack
-  - A health pack recovers 10% of your hp
-  - Be careful, a zombie may be weak but if they reach you
-  - They can deal serious damage
+  - I did it
+  - But it got away
+  - I need to get moving

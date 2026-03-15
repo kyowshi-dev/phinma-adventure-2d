@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a525c0172ed0f88459500803cb3de9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invincibilityDuration: 1
+  _invincibilityDuration: 3
   _flashColor: {r: 0, g: 0, b: 0, a: 0}
   _numberOfFlashes: 10
 --- !u!114 &7325333450489056177

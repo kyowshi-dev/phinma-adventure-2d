@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6230967561207350640, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6230967561207350648, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
       propertyPath: m_Name
       value: Strong Enemy
@@ -131,7 +135,8 @@ PrefabInstance:
       propertyPath: _damageAmount
       value: 35
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5267291573783307034, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9cc739e4b2086a041bba42b8ba987f7f, type: 3}
 --- !u!114 &7055532892721884783 stripped
 MonoBehaviour:

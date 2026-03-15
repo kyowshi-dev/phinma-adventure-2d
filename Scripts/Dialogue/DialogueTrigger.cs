@@ -25,6 +25,18 @@ public class DialogueTrigger : MonoBehaviour
         
     }
 
+    public void PlayDialogueOnDemand()
+    {
+        if (_dialogueManager != null && _dialogueToPlay != null)
+        {
+            _dialogueManager.StartDialogue(_dialogueToPlay);
+            Debug.Log($"Event triggered dialogue: {_dialogueToPlay.name}");
+        }
+        else
+        {
+            Debug.LogWarning("DialogueManager or DialogueToPlay is missing!");
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         // Check if the Player is leaving the trigger

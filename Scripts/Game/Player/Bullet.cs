@@ -18,13 +18,23 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<EnemyMovement>())
+        // 1. Check if the thing we hit is tagged as an Enemy
+        if (collision.CompareTag("Enemy"))
         {
+            // 2. Try to get the HealthController
             HealthController healthController = collision.GetComponent<HealthController>();
-            healthController.TakeDamage(10);
-            Destroy(gameObject);
+            
+            // 3. If it has one, deal damage!
+            if (healthController != null)
+            {
+                healthController.TakeDamage(10);
+            }
+            
+            // 4. Destroy the bullet so it doesn't bounce or pierce
+            DestroyBullet();
         }
 
+        // Destroy on hitting walls
         if (collision.CompareTag("Wall"))
         {
             DestroyBullet();
