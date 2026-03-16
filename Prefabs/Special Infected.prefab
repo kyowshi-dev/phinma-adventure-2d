@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 2037318121
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6bed40d52b455754ab9475e878e3bcfd, type: 3}
+  m_Sprite: {fileID: 975050359, guid: 6969d61e894b9064197e7124740126f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,15 +98,16 @@ GameObject:
   - component: {fileID: 6988186873356452484}
   - component: {fileID: 5982227834402183203}
   - component: {fileID: 6988186873356452485}
-  - component: {fileID: 6988186873356452483}
   - component: {fileID: 4373839828682071250}
   - component: {fileID: 6988186873356452487}
   - component: {fileID: 8599589378466758707}
   - component: {fileID: 84801564797886505}
   - component: {fileID: 6988186873356452482}
   - component: {fileID: 2464768233869503371}
+  - component: {fileID: 4964373096463070994}
+  - component: {fileID: 6646794194759894848}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: Special Infected
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,26 +205,6 @@ CircleCollider2D:
   m_Offset: {x: 0.7, y: 0}
   serializedVersion: 2
   m_Radius: 1.76
---- !u!114 &6988186873356452483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6988186873356452481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54ffb554f7daefb4eb9fdd62b387e822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lungeSpeed: 10
-  _lungeDuration: 0.6
-  _lungeCooldown: 3
-  _lungeCheckDistance: 10
-  _lungeCheckRadius: 0.5
-  _solidLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &4373839828682071250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +282,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6988186873356452483}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -427,3 +408,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyAttributes: {fileID: 11400000, guid: 953f42eb9dd5df846a680ba91e4f4272, type: 2}
+--- !u!95 &4964373096463070994
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988186873356452481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 954fb0f7c673d1945a8d7ab6b042f0b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6646794194759894848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988186873356452481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1580009549a0b8e4eaf01ec74b095f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vanishDuration: 0.5
+  _minTeleportDistance: 4
+  _maxTeleportDistance: 8

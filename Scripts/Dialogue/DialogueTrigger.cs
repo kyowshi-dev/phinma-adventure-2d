@@ -1,5 +1,7 @@
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -13,6 +15,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool _hasBeenTriggered = false;
 
+    // Fired at the start of the dialogue so other systems can respond.
+    public UnityEvent OnDialogueStarted;
+
+    // Fired after the dialogue has been ended/closed so other systems (like cameras) can react.
+    public UnityEvent OnDialogueEnded;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the object entering the trigger is the Player
@@ -20,9 +28,10 @@ public class DialogueTrigger : MonoBehaviour
         {
             _hasBeenTriggered = true; // This zone is now "used up"
             _dialogueManager.StartDialogue(_dialogueToPlay);
-            Debug.Log($"Player entered zone: Playing dialogue {_dialogueToPlay.DialogueID}!");
+            SaveCheckpoint();           
+            OnDialogueStarted?.Invoke();
+            Debug.Log($"Player entered zone: Playing dialogue {_dialogueToPlay.name}!");
         }
-        
     }
 
     public void PlayDialogueOnDemand()
@@ -30,6 +39,11 @@ public class DialogueTrigger : MonoBehaviour
         if (_dialogueManager != null && _dialogueToPlay != null)
         {
             _dialogueManager.StartDialogue(_dialogueToPlay);
+            
+            // ADD THIS HERE TOO: Save the game if a boss dies!
+            SaveCheckpoint();
+            
+            OnDialogueStarted?.Invoke();
             Debug.Log($"Event triggered dialogue: {_dialogueToPlay.name}");
         }
         else
@@ -37,16 +51,44 @@ public class DialogueTrigger : MonoBehaviour
             Debug.LogWarning("DialogueManager or DialogueToPlay is missing!");
         }
     }
+
+    public void EndDialogue()
+    {
+        if (_dialogueManager != null)
+        {
+            _dialogueManager.EndDialogue();
+            Debug.Log("Dialogue Ended!");
+        }
+
+        // Tell Unity (Inspector/other listeners) the dialogue sequence has ended.
+        OnDialogueEnded?.Invoke();
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         // Check if the Player is leaving the trigger
         if (collision.CompareTag("Player"))
         {
-            if (_dialogueManager != null)
-            {
-                _dialogueManager.EndDialogue();
-                Debug.Log("Player left zone: Dialogue Ended!");
-            }
+            EndDialogue();
+        }
+    }
+
+    // This saves the player's location to the computer's memory
+    public void SaveCheckpoint()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            PlayerPrefs.SetFloat("CheckpointX", player.transform.position.x);
+            PlayerPrefs.SetFloat("CheckpointY", player.transform.position.y);
+            PlayerPrefs.SetInt("HasCheckpoint", 1);
+
+            // ADD THIS LINE: Save the name of the current level
+            PlayerPrefs.SetString("SavedScene", SceneManager.GetActiveScene().name); 
+
+            PlayerPrefs.Save();
+            Debug.Log("Checkpoint and Scene Saved!");
         }
     }
 }

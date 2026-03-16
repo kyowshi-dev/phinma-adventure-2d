@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9583038d3d3cad9478d52ade71bb4b5b, type: 3}
-  m_Name: Scene2_Boss_Death
+  m_Name: 3-2
   m_EditorClassIdentifier: 
-  dialogueID: 2-4
-  speakerName: Charlz
+  dialogueID: 
+  speakerName: 
   portrait: {fileID: 0}
   voiceClip: {fileID: 0}
-  dialogueLines:
-  - I did it
-  - But it got away
-  - I need to get moving
-  - Lets get inside that building first
+  dialogueLines: []
